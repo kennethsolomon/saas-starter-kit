@@ -1,6 +1,6 @@
 // pages/success.js
 import Stripe from "stripe";
-import OrderSummary from "@/components/OrderSummary";
+import OrderSummary from "@/components/stripe/OrderSummary";
 
 async function getStripeSession(sessionId: string) {
   const stripeSecret = process.env.STRIPE_SECRET_KEY;

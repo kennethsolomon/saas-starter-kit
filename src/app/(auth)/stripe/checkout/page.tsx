@@ -14,7 +14,7 @@ const stripePromise = loadStripe(
 export default function Checkout() {
   const handleCheckout = async () => {
     const stripe = await stripePromise;
-    const response = await fetch("/api/checkout-sessions", {
+    const response = await fetch("/api/stripe/checkout-sessions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
