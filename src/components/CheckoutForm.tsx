@@ -4,6 +4,7 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
+import axios from "axios";
 import { useState } from "react";
 
 const CheckoutForm = () => {
@@ -27,6 +28,15 @@ const CheckoutForm = () => {
     setErrorMessage(undefined);
 
     try {
+      const response = await axios.post("/api/create-payment-intent", {
+        amount: 1000,
+        plan: "pro",
+      });
+
+      const data = response.data;
+
+      console.log(data);
+
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
