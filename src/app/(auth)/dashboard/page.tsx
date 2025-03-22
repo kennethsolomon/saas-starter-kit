@@ -4,7 +4,7 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-64 bg-white border-r">
+      <div className="w-64">
         <div className="p-6">
           <h2 className="text-lg font-semibold">Dashboard</h2>
         </div>
